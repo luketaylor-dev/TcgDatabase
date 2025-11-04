@@ -1,6 +1,6 @@
-# Yu-Gi-Oh! Card Database API
+# TCG Database API
 
-A .NET 7 ASP.NET Core Web API for managing your Yu-Gi-Oh! card collection. This API integrates with the [YGOPRODeck API](https://ygoprodeck.com/api-guide/) to fetch card data and stores it in a PostgreSQL database.
+A .NET 7 ASP.NET Core Web API for managing your Trading Card Game (TCG) collections. Currently supports Yu-Gi-Oh! with integration to the [YGOPRODeck API](https://ygoprodeck.com/api-guide/), with plans to support additional TCGs. Card data is stored in a PostgreSQL database.
 
 ## Features
 
@@ -24,12 +24,17 @@ A .NET 7 ASP.NET Core Web API for managing your Yu-Gi-Oh! card collection. This 
 
 ```bash
 git clone <your-repo-url>
-cd Yu-Gi-Oh-Database
+cd TcgDatabase
 ```
 
 ### 2. Configure Database
 
-Update the connection string in `YuGiOh.API/appsettings.json`:
+Create `TcgDatabase.API/appsettings.json` from the example file:
+```bash
+cp TcgDatabase.API/appsettings.json.example TcgDatabase.API/appsettings.json
+```
+
+Update the connection string in `TcgDatabase.API/appsettings.json`:
 
 ```json
 {
@@ -42,8 +47,8 @@ Update the connection string in `YuGiOh.API/appsettings.json`:
 ### 3. Run Database Migrations
 
 ```bash
-cd YuGiOh.Infrastructure
-dotnet ef database update --startup-project ../YuGiOh.API --context AppDbContext
+cd TcgDatabase.Infrastructure
+dotnet ef database update --startup-project ../TcgDatabase.API --context AppDbContext
 ```
 
 **Note:** If you don't have Entity Framework tools installed:
@@ -55,7 +60,7 @@ dotnet tool install --global dotnet-ef
 ### 4. Run the API
 
 ```bash
-cd YuGiOh.API
+cd TcgDatabase.API
 dotnet run
 ```
 
@@ -130,12 +135,12 @@ You can update these fields later when YGOPRODeck adds the set to their database
 ## Project Structure
 
 ```
-Yu-Gi-Oh-Database/
-├── YuGiOh.API/              # Web API layer (Controllers, Program.cs)
-├── YuGiOh.Application/      # Business logic layer (Services, DTOs)
-├── YuGiOh.Domain/           # Domain models
-├── YuGiOh.Infrastructure/   # Data access layer (DbContext, Repositories, Models)
-└── test/                    # Test project
+TcgDatabase/
+├── TcgDatabase.API/              # Web API layer (Controllers, Program.cs)
+├── TcgDatabase.Application/      # Business logic layer (Services, DTOs)
+├── TcgDatabase.Domain/           # Domain models
+├── TcgDatabase.Infrastructure/   # Data access layer (DbContext, Repositories, Models)
+└── test/                         # Test project
 ```
 
 ## Architecture
@@ -188,13 +193,13 @@ This project uses the [YGOPRODeck API v7](https://ygoprodeck.com/api-guide/). Pl
 ### Adding a Migration
 
 ```bash
-dotnet ef migrations add MigrationName --project YuGiOh.Infrastructure --startup-project YuGiOh.API --context AppDbContext
+dotnet ef migrations add MigrationName --project TcgDatabase.Infrastructure --startup-project TcgDatabase.API --context AppDbContext
 ```
 
 ### Updating Database
 
 ```bash
-dotnet ef database update --project YuGiOh.Infrastructure --startup-project YuGiOh.API --context AppDbContext
+dotnet ef database update --project TcgDatabase.Infrastructure --startup-project TcgDatabase.API --context AppDbContext
 ```
 
 ## Contributing
