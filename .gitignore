@@ -1,0 +1,77 @@
+## .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+*.cache
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+## Rider
+.idea/
+*.sln.iml
+*.iml
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+## Database
+*.db
+*.sqlite
+*.sqlite3
+
+## Environment variables and config files
+.env
+.env.local
+appsettings.Development.json
+appsettings.Production.json
+appsettings.json
+!appsettings.json.example
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Migrations (keep structure, ignore compiled)
+# Keep migration .cs files but ignore compiled versions
+*.Designer.cs
+!Migrations/*.Designer.cs
+

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGiOh.Domain", "YuGiOh.Domain\YuGiOh.Domain.csproj", "{CE76A444-A400-4FB1-89F6-2EB20CFB5332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGiOh.Application", "YuGiOh.Application\YuGiOh.Application.csproj", "{647D55BB-0481-4464-8340-6912D31FFA3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGiOh.Infrastructure", "YuGiOh.Infrastructure\YuGiOh.Infrastructure.csproj", "{34BC74F5-FD16-4FD9-A9FA-54E3A9FFC26B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGiOh.API", "YuGiOh.API\YuGiOh.API.csproj", "{F819965F-CAAB-42DE-A395-58B3EA0705A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE76A444-A400-4FB1-89F6-2EB20CFB5332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE76A444-A400-4FB1-89F6-2EB20CFB5332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE76A444-A400-4FB1-89F6-2EB20CFB5332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE76A444-A400-4FB1-89F6-2EB20CFB5332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647D55BB-0481-4464-8340-6912D31FFA3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647D55BB-0481-4464-8340-6912D31FFA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647D55BB-0481-4464-8340-6912D31FFA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647D55BB-0481-4464-8340-6912D31FFA3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34BC74F5-FD16-4FD9-A9FA-54E3A9FFC26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BC74F5-FD16-4FD9-A9FA-54E3A9FFC26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34BC74F5-FD16-4FD9-A9FA-54E3A9FFC26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34BC74F5-FD16-4FD9-A9FA-54E3A9FFC26B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F819965F-CAAB-42DE-A395-58B3EA0705A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F819965F-CAAB-42DE-A395-58B3EA0705A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F819965F-CAAB-42DE-A395-58B3EA0705A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F819965F-CAAB-42DE-A395-58B3EA0705A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
