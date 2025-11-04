@@ -30,6 +30,7 @@ cd TcgDatabase
 ### 2. Configure Database
 
 Create `TcgDatabase.API/appsettings.json` from the example file:
+
 ```bash
 cp TcgDatabase.API/appsettings.json.example TcgDatabase.API/appsettings.json
 ```
@@ -73,6 +74,7 @@ docker-compose down
 ```
 
 The API will be available at:
+
 - HTTP: `http://localhost:5000`
 - Swagger UI: `http://localhost:5000/swagger`
 
@@ -84,6 +86,7 @@ dotnet run
 ```
 
 The API will be available at:
+
 - HTTP: `http://localhost:5000`
 - HTTPS: `https://localhost:5001`
 - Swagger UI: `https://localhost:5001/swagger`
@@ -95,6 +98,7 @@ The API will be available at:
 Get all cards in the database.
 
 **Response:**
+
 ```json
 [
   {
@@ -110,6 +114,7 @@ Get all cards in the database.
 Add a card to the database by fetching it from YGOPRODeck API.
 
 **Request Body:**
+
 ```json
 {
   "cardId": "80181649",
@@ -118,6 +123,7 @@ Add a card to the database by fetching it from YGOPRODeck API.
 ```
 
 **Or using card name:**
+
 ```json
 {
   "cardName": "A Case for K9",
@@ -126,6 +132,7 @@ Add a card to the database by fetching it from YGOPRODeck API.
 ```
 
 **Parameters:**
+
 - `cardId` (optional): 8-digit card passcode (recommended - more reliable)
 - `cardName` (optional): Exact card name
 - `setId` (required): Set code (e.g., "JUSH-EN040")
@@ -133,6 +140,7 @@ Add a card to the database by fetching it from YGOPRODeck API.
 **Note:** Provide either `cardId` OR `cardName`, not both.
 
 **Response:**
+
 ```json
 {
   "id": "80181649",
@@ -144,6 +152,7 @@ Add a card to the database by fetching it from YGOPRODeck API.
 ## Handling Newer Sets
 
 If you provide a `setId` that isn't yet in the YGOPRODeck database (newer sets), the API will:
+
 - Still add the card to your database
 - Store the `setId` you provided
 - Set other set fields (name, rarity, price) to `null`
@@ -183,6 +192,7 @@ This project follows **Clean Architecture** principles:
 ## YGOPRODeck API
 
 This project uses the [YGOPRODeck API v7](https://ygoprodeck.com/api-guide/). Please respect their rate limits:
+
 - **20 requests per 1 second**
 - Exceeding the limit results in a 1-hour block
 
@@ -191,20 +201,25 @@ This project uses the [YGOPRODeck API v7](https://ygoprodeck.com/api-guide/). Pl
 ## Database Schema
 
 ### Cards
+
 - Basic card information (id, name, type, description, etc.)
 - Links to sets, images, and prices
 
 ### CardSets
+
 - Set information (code, name, rarity, price)
 - Set details can be null for newer sets not in YGOPRODeck
 
 ### CardImages
+
 - Image URLs (full, small, cropped)
 
 ### CardPrices
+
 - Prices from multiple marketplaces
 
 ### MonsterCards
+
 - Monster-specific data (ATK, DEF, Level, Attribute, etc.)
 
 ## Docker Deployment
@@ -237,6 +252,7 @@ docker-compose down -v
 ### Customizing Docker Setup
 
 Edit `docker-compose.yml` to:
+
 - Change database credentials
 - Modify port mappings
 - Adjust environment variables
@@ -276,4 +292,3 @@ This project is open source and available under the MIT License.
 ## Support
 
 For issues or questions, please open an issue on GitHub.
-
