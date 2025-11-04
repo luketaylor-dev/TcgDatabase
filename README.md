@@ -59,6 +59,25 @@ dotnet tool install --global dotnet-ef
 
 ### 4. Run the API
 
+**Option A: Using Docker Compose (Recommended for Local Server)**
+
+```bash
+# Start both API and PostgreSQL
+docker-compose up -d
+
+# View logs
+docker-compose logs -f api
+
+# Stop services
+docker-compose down
+```
+
+The API will be available at:
+- HTTP: `http://localhost:5000`
+- Swagger UI: `http://localhost:5000/swagger`
+
+**Option B: Direct .NET Run**
+
 ```bash
 cd TcgDatabase.API
 dotnet run
@@ -187,6 +206,41 @@ This project uses the [YGOPRODeck API v7](https://ygoprodeck.com/api-guide/). Pl
 
 ### MonsterCards
 - Monster-specific data (ATK, DEF, Level, Attribute, etc.)
+
+## Docker Deployment
+
+### Running with Docker Compose
+
+The project includes a `docker-compose.yml` file that sets up both the API and PostgreSQL database:
+
+```bash
+# Start services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+
+# Stop and remove volumes (WARNING: deletes database data)
+docker-compose down -v
+```
+
+### Docker Configuration
+
+- **PostgreSQL**: Runs on port `5432` (mapped to host)
+- **API**: Runs on port `5000` (mapped to host port 80)
+- **Database credentials**: Default is `postgres/postgres` (change in `docker-compose.yml` for production)
+- **Data persistence**: PostgreSQL data is stored in a Docker volume `postgres_data`
+
+### Customizing Docker Setup
+
+Edit `docker-compose.yml` to:
+- Change database credentials
+- Modify port mappings
+- Adjust environment variables
+- Configure resource limits
 
 ## Development
 
